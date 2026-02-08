@@ -21,8 +21,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   openGraph: {
     title: "My Memory",
-    description: "Search your notes by meaning, not keywords — across Apple Notes, Obsidian, Notion, and local files.",
+    description:
+      "Search your notes by meaning, not keywords — across Apple Notes, Obsidian, Notion, and local files.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "My Memory",
+    description:
+      "Semantic search across Apple Notes, Obsidian, Notion, and local files.",
   },
 };
 

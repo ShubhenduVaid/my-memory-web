@@ -20,8 +20,14 @@ export function SiteHeader() {
           <Link className="hover:text-white" href="/download">
             Download
           </Link>
+          <Link className="hover:text-white" href="/developers">
+            Developers
+          </Link>
           <Link className="hover:text-white" href="/docs">
             Docs
+          </Link>
+          <Link className="hover:text-white" href="/faq">
+            FAQ
           </Link>
           <Link className="hover:text-white" href="/privacy">
             Privacy
