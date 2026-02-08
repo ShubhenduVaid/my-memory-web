@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { getSiteUrlAsUrl } from "../lib/siteUrl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s · My Memory",
   },
   description: "Search your notes by meaning, not keywords — across Apple Notes, Obsidian, Notion, and local files.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: getSiteUrlAsUrl(),
   openGraph: {
     title: "My Memory",
     description:
