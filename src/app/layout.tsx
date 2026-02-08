@@ -18,9 +18,7 @@ export const metadata: Metadata = {
     template: "%s · My Memory",
   },
   description: "Search your notes by meaning, not keywords — across Apple Notes, Obsidian, Notion, and local files.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://github.com/ShubhenduVaid/my-memory"
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   openGraph: {
     title: "My Memory",
     description: "Search your notes by meaning, not keywords — across Apple Notes, Obsidian, Notion, and local files.",
