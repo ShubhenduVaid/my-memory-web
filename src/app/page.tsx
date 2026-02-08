@@ -21,9 +21,53 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
+function JsonLdSoftware() {
+  const data = [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "My Memory",
+      applicationCategory: "ProductivityApplication",
+      operatingSystem: ["macOS", "Windows", "Linux"],
+      description:
+        "Search your notes by meaning, not keywords — across Apple Notes (macOS), Obsidian, Notion, and local files.",
+      isAccessibleForFree: true,
+      license: "https://opensource.org/licenses/MIT",
+      codeRepository: "https://github.com/ShubhenduVaid/my-memory",
+      downloadUrl: "https://github.com/ShubhenduVaid/my-memory/releases",
+      creator: {
+        "@type": "Person",
+        name: "Shubhendu Vaid",
+        url: "https://github.com/ShubhenduVaid",
+      },
+      offers: {
+        "@type": "Offer",
+        price: 0,
+        priceCurrency: "USD",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "My Memory",
+      url: "https://github.com/ShubhenduVaid/my-memory",
+      description:
+        "My Memory is an open-source desktop app for semantic search across your notes.",
+    },
+  ];
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export default function Home() {
   return (
     <Shell>
+      <JsonLdSoftware />
       <div className="flex flex-col gap-6">
         <div className="flex flex-wrap gap-2">
           <Badge>Local-first</Badge>
@@ -43,10 +87,10 @@ export default function Home() {
 
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link
-            href="/download"
+            href="/getting-started"
             className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black hover:bg-zinc-200"
           >
-            Download
+            Get started
           </Link>
           <Link
             href={REPO_URL}
@@ -94,13 +138,19 @@ export default function Home() {
           </ul>
         </Section>
 
-        <Section title="Docs">
+        <Section title="Docs snapshot (fast)">
           <p>
-            Integrations, architecture, development instructions and the roadmap live in the main repository.
+            If you want a quick path, start with the Getting started page. The full docs live in the main repo.
           </p>
-          <div className="mt-3">
+          <div className="mt-3 flex flex-col gap-2">
+            <Link className="underline hover:text-white" href="/getting-started">
+              Getting started
+            </Link>
+            <Link className="underline hover:text-white" href="/developers">
+              Developer quickstart
+            </Link>
             <Link className="underline hover:text-white" href="/docs">
-              Browse docs
+              Full docs (GitHub)
             </Link>
           </div>
         </Section>
