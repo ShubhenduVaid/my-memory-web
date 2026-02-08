@@ -17,11 +17,23 @@ export function SiteHeader() {
         </div>
 
         <nav className="flex items-center gap-4 text-sm text-white/75">
+          <Link className="hover:text-white" href="/getting-started">
+            Getting started
+          </Link>
           <Link className="hover:text-white" href="/download">
             Download
           </Link>
+          <Link className="hover:text-white" href="/developers">
+            Developers
+          </Link>
           <Link className="hover:text-white" href="/docs">
             Docs
+          </Link>
+          <Link className="hover:text-white" href="/faq">
+            FAQ
+          </Link>
+          <Link className="hover:text-white" href="/changelog">
+            Changelog
           </Link>
           <Link className="hover:text-white" href="/privacy">
             Privacy
