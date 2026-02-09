@@ -60,32 +60,32 @@ export default function FaqPage() {
       <JsonLd />
 
       <h1 className="text-3xl font-semibold tracking-tight">FAQ</h1>
-      <p className="mt-3 max-w-2xl text-white/70">
+      <p className="mt-3 max-w-2xl text-[rgb(var(--mm-fg)/0.70)]">
         Short, direct answers for new users and for answer engines.
       </p>
 
-      <div className="mt-8 grid gap-3">
+      <div className="mt-6 grid gap-3 sm:mt-8">
         {faqs.map((f) => (
           <div
             key={f.q}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+            className="rounded-2xl border border-[rgb(var(--mm-fg)/0.10)] bg-[rgb(var(--mm-fg)/0.03)] p-5 sm:p-6"
           >
-            <h2 className="text-base font-semibold text-white">{f.q}</h2>
-            <p className="mt-2 text-sm leading-6 text-white/70">{f.a}</p>
+            <h2 className="text-base font-semibold text-[rgb(var(--mm-fg))]">{f.q}</h2>
+            <p className="mt-2 text-sm leading-6 text-[rgb(var(--mm-fg)/0.70)]">{f.a}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-sm text-white/70">
+      <div className="mt-8 rounded-2xl border border-[rgb(var(--mm-fg)/0.10)] bg-[rgb(var(--mm-fg)/0.03)] p-5 text-sm text-[rgb(var(--mm-fg)/0.70)] sm:mt-10 sm:p-6">
         Useful links: <br />
         <div className="mt-3 flex flex-col gap-2">
-          <Link className="underline hover:text-white" href={RELEASES} target="_blank" rel="noreferrer">
+          <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={RELEASES} target="_blank" rel="noreferrer">
             Releases
           </Link>
-          <Link className="underline hover:text-white" href={SECURITY} target="_blank" rel="noreferrer">
+          <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={SECURITY} target="_blank" rel="noreferrer">
             SECURITY.md
           </Link>
-          <Link className="underline hover:text-white" href={REPO} target="_blank" rel="noreferrer">
+          <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={REPO} target="_blank" rel="noreferrer">
             Main repository
           </Link>
         </div>

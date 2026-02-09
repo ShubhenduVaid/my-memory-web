@@ -8,7 +8,7 @@ const DEV = "https://github.com/ShubhenduVaid/my-memory/blob/master/docs/DEVELOP
 
 function Code({ children }: { children: React.ReactNode }) {
   return (
-    <pre className="mt-3 overflow-x-auto rounded-xl border border-white/10 bg-black/40 p-4 text-xs leading-5 text-white/85">
+    <pre className="mt-3 overflow-x-auto rounded-xl border border-[rgb(var(--mm-fg)/0.10)] bg-[var(--mm-code-bg)] p-3 text-xs leading-5 text-[rgb(var(--mm-fg)/0.85)] sm:p-4">
       <code>{children}</code>
     </pre>
   );
@@ -16,9 +16,9 @@ function Code({ children }: { children: React.ReactNode }) {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-      <h2 className="text-lg font-semibold text-white">{title}</h2>
-      <div className="mt-3 text-sm leading-6 text-white/75">{children}</div>
+    <section className="min-w-0 rounded-2xl border border-[rgb(var(--mm-fg)/0.10)] bg-[rgb(var(--mm-fg)/0.03)] p-5 sm:p-6">
+      <h2 className="text-lg font-semibold text-[rgb(var(--mm-fg))]">{title}</h2>
+      <div className="mt-3 text-sm leading-6 text-[rgb(var(--mm-fg)/0.75)]">{children}</div>
     </section>
   );
 }
@@ -51,17 +51,17 @@ export default function DevelopersPage() {
       <JsonLdHowTo />
 
       <h1 className="text-3xl font-semibold tracking-tight">Developers</h1>
-      <p className="mt-3 max-w-2xl text-white/70">
+      <p className="mt-3 max-w-2xl text-[rgb(var(--mm-fg)/0.70)]">
         Fast path to try it locally, plus links to deeper docs.
       </p>
 
-      <div className="mt-8 grid gap-4">
+      <div className="mt-6 grid gap-4 sm:mt-8">
         <Section title="Recommended: download a build">
           <p>
             If you just want to try the app, download a build from Releases:
           </p>
           <div className="mt-3">
-            <Link className="underline hover:text-white" href={RELEASES} target="_blank" rel="noreferrer">
+            <Link className="block max-w-full break-all underline hover:text-[rgb(var(--mm-fg))]" href={RELEASES} target="_blank" rel="noreferrer">
               {RELEASES}
             </Link>
           </div>
@@ -78,7 +78,7 @@ cp .env.example .env
 # edit .env (set GEMINI_API_KEY or OPENROUTER_API_KEY)
 npm start`}</Code>
           <p className="mt-3">
-            For a full development guide see: <Link className="underline hover:text-white" href={DEV} target="_blank" rel="noreferrer">DEVELOPMENT.md</Link>
+            For a full development guide see: <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={DEV} target="_blank" rel="noreferrer">DEVELOPMENT.md</Link>
           </p>
         </Section>
 
@@ -87,7 +87,7 @@ npm start`}</Code>
             Apple Notes (macOS only), Obsidian vaults, Notion pages, and local folders.
           </p>
           <div className="mt-3">
-            <Link className="underline hover:text-white" href={INTEGRATIONS} target="_blank" rel="noreferrer">
+            <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={INTEGRATIONS} target="_blank" rel="noreferrer">
               INTEGRATIONS.md
             </Link>
           </div>
