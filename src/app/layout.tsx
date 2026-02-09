@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   },
   description: "Search your notes by meaning, not keywords — across Apple Notes, Obsidian, Notion, and local files.",
   metadataBase: getSiteUrlAsUrl(),
+  icons: {
+    icon: [{ url: "/favicon-dark.svg" }],
+  },
   openGraph: {
     title: "My Memory",
     description:
