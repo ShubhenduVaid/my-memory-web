@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Theme tokens (space-separated RGB for easy alpha usage: rgb(var(--mm-fg) / 0.7)) */
+  --mm-bg: 255 255 255;
+  --mm-fg: 10 10 10;
+  --mm-code-bg: rgb(0 0 0 / 0.04);
+  --mm-cta-bg: rgb(10 10 10);
+  --mm-cta-bg-hover: rgb(23 23 23);
+  --mm-cta-fg: rgb(255 255 255);
+
+  --background: rgb(var(--mm-bg));
+  --foreground: rgb(var(--mm-fg));
 }
 
 @theme inline {
@@ -14,13 +24,51 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: dark;
+    --mm-bg: 10 10 10;
+    --mm-fg: 255 255 255;
+    --mm-code-bg: rgb(0 0 0 / 0.4);
+    --mm-cta-bg: rgb(255 255 255);
+    --mm-cta-bg-hover: rgb(228 228 231);
+    --mm-cta-fg: rgb(0 0 0);
   }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --mm-bg: 255 255 255;
+  --mm-fg: 10 10 10;
+  --mm-code-bg: rgb(0 0 0 / 0.04);
+  --mm-cta-bg: rgb(10 10 10);
+  --mm-cta-bg-hover: rgb(23 23 23);
+  --mm-cta-fg: rgb(255 255 255);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --mm-bg: 10 10 10;
+  --mm-fg: 255 255 255;
+  --mm-code-bg: rgb(0 0 0 / 0.4);
+  --mm-cta-bg: rgb(255 255 255);
+  --mm-cta-bg-hover: rgb(228 228 231);
+  --mm-cta-fg: rgb(0 0 0);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Theme toggle icons: keep both in the DOM so CSS decides instantly based on [data-theme]. */
+.mm-theme-icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .mm-theme-icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .mm-theme-icon-moon {
+  display: none;
 }

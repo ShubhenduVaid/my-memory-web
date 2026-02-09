@@ -6,7 +6,7 @@ const RELEASES_URL = "https://github.com/ShubhenduVaid/my-memory/releases";
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
+    <span className="inline-flex items-center rounded-full border border-[rgb(var(--mm-fg)/0.10)] bg-[rgb(var(--mm-fg)/0.05)] px-3 py-1 text-xs text-[rgb(var(--mm-fg)/0.80)]">
       {children}
     </span>
   );
@@ -14,9 +14,9 @@ function Badge({ children }: { children: React.ReactNode }) {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-      <h2 className="text-lg font-semibold text-white">{title}</h2>
-      <div className="mt-3 text-sm leading-6 text-white/75">{children}</div>
+    <section className="rounded-2xl border border-[rgb(var(--mm-fg)/0.10)] bg-[rgb(var(--mm-fg)/0.03)] p-5 sm:p-6">
+      <h2 className="text-lg font-semibold text-[rgb(var(--mm-fg))]">{title}</h2>
+      <div className="mt-3 text-sm leading-6 text-[rgb(var(--mm-fg)/0.75)]">{children}</div>
     </section>
   );
 }
@@ -76,11 +76,11 @@ export default function Home() {
           <Badge>Obsidian • Notion • Local Files</Badge>
         </div>
 
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
           Find anything in your notes — even when you don’t remember the words.
         </h1>
 
-        <p className="max-w-2xl text-base leading-7 text-white/70">
+        <p className="max-w-2xl text-base leading-7 text-[rgb(var(--mm-fg)/0.70)]">
           My Memory is a desktop app that adds semantic search across your note sources.
           One hotkey to search Apple Notes, Obsidian vaults, Notion pages, and local folders.
         </p>
@@ -88,7 +88,7 @@ export default function Home() {
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link
             href="/getting-started"
-            className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black hover:bg-zinc-200"
+            className="inline-flex items-center justify-center rounded-xl bg-[var(--mm-cta-bg)] px-5 py-3 text-sm font-semibold text-[var(--mm-cta-fg)] hover:bg-[var(--mm-cta-bg-hover)]"
           >
             Get started
           </Link>
@@ -96,7 +96,7 @@ export default function Home() {
             href={REPO_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-xl border border-[rgb(var(--mm-fg)/0.15)] bg-[rgb(var(--mm-fg)/0.05)] px-5 py-3 text-sm font-semibold text-[rgb(var(--mm-fg))] hover:bg-[rgb(var(--mm-fg)/0.10)]"
           >
             View source
           </Link>
@@ -104,14 +104,14 @@ export default function Home() {
             href={RELEASES_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-transparent px-5 py-3 text-sm font-semibold text-white/80 hover:bg-white/5"
+            className="inline-flex items-center justify-center rounded-xl border border-[rgb(var(--mm-fg)/0.10)] bg-transparent px-5 py-3 text-sm font-semibold text-[rgb(var(--mm-fg)/0.80)] hover:bg-[rgb(var(--mm-fg)/0.05)]"
           >
             Releases ↗
           </Link>
         </div>
       </div>
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2">
+      <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2">
         <Section title="Privacy & data flow">
           <ul className="list-disc space-y-2 pl-5">
             <li>Notes are indexed and cached locally.</li>
@@ -124,16 +124,16 @@ export default function Home() {
         <Section title="Integrations">
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <span className="font-medium text-white">Apple Notes</span> (macOS only)
+              <span className="font-medium text-[rgb(var(--mm-fg))]">Apple Notes</span> (macOS only)
             </li>
             <li>
-              <span className="font-medium text-white">Obsidian</span> (vault folders)
+              <span className="font-medium text-[rgb(var(--mm-fg))]">Obsidian</span> (vault folders)
             </li>
             <li>
-              <span className="font-medium text-white">Notion</span> (integration + shared pages)
+              <span className="font-medium text-[rgb(var(--mm-fg))]">Notion</span> (integration + shared pages)
             </li>
             <li>
-              <span className="font-medium text-white">Local files</span> (folders, recursive)
+              <span className="font-medium text-[rgb(var(--mm-fg))]">Local files</span> (folders, recursive)
             </li>
           </ul>
         </Section>
@@ -143,13 +143,13 @@ export default function Home() {
             If you want a quick path, start with the Getting started page. The full docs live in the main repo.
           </p>
           <div className="mt-3 flex flex-col gap-2">
-            <Link className="underline hover:text-white" href="/getting-started">
+            <Link className="underline hover:text-[rgb(var(--mm-fg))]" href="/getting-started">
               Getting started
             </Link>
-            <Link className="underline hover:text-white" href="/developers">
+            <Link className="underline hover:text-[rgb(var(--mm-fg))]" href="/developers">
               Developer quickstart
             </Link>
-            <Link className="underline hover:text-white" href="/docs">
+            <Link className="underline hover:text-[rgb(var(--mm-fg))]" href="/docs">
               Full docs (GitHub)
             </Link>
           </div>

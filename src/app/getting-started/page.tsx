@@ -9,7 +9,7 @@ const DEV = "https://github.com/ShubhenduVaid/my-memory/blob/master/docs/DEVELOP
 
 function Code({ children }: { children: React.ReactNode }) {
   return (
-    <pre className="mt-3 overflow-x-auto rounded-xl border border-white/10 bg-black/40 p-4 text-xs leading-5 text-white/85">
+    <pre className="mt-3 overflow-x-auto rounded-xl border border-[rgb(var(--mm-fg)/0.10)] bg-[var(--mm-code-bg)] p-3 text-xs leading-5 text-[rgb(var(--mm-fg)/0.85)] sm:p-4">
       <code>{children}</code>
     </pre>
   );
@@ -17,9 +17,9 @@ function Code({ children }: { children: React.ReactNode }) {
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-      <h2 className="text-lg font-semibold text-white">{title}</h2>
-      <div className="mt-3 text-sm leading-6 text-white/75">{children}</div>
+    <section className="min-w-0 rounded-2xl border border-[rgb(var(--mm-fg)/0.10)] bg-[rgb(var(--mm-fg)/0.03)] p-5 sm:p-6">
+      <h2 className="text-lg font-semibold text-[rgb(var(--mm-fg))]">{title}</h2>
+      <div className="mt-3 text-sm leading-6 text-[rgb(var(--mm-fg)/0.75)]">{children}</div>
     </section>
   );
 }
@@ -28,15 +28,15 @@ export default function GettingStartedPage() {
   return (
     <Shell>
       <h1 className="text-3xl font-semibold tracking-tight">Getting started</h1>
-      <p className="mt-3 max-w-2xl text-white/70">
+      <p className="mt-3 max-w-2xl text-[rgb(var(--mm-fg)/0.70)]">
         Two ways to try My Memory: download a build, or run from source.
       </p>
 
-      <div className="mt-8 grid gap-4">
+      <div className="mt-6 grid gap-4 sm:mt-8">
         <Card title="1) Download (recommended)">
           <p>Grab the latest build from GitHub Releases:</p>
           <div className="mt-3">
-            <Link className="underline hover:text-white" href={RELEASES} target="_blank" rel="noreferrer">
+            <Link className="block max-w-full break-all underline hover:text-[rgb(var(--mm-fg))]" href={RELEASES} target="_blank" rel="noreferrer">
               {RELEASES}
             </Link>
           </div>
@@ -53,21 +53,21 @@ cp .env.example .env
 # edit .env (set GEMINI_API_KEY or OPENROUTER_API_KEY)
 npm start`}</Code>
           <p className="mt-3">
-            Source docs: <Link className="underline hover:text-white" href={QUICKSTART} target="_blank" rel="noreferrer">QUICKSTART.md</Link> and{" "}
-            <Link className="underline hover:text-white" href={DEV} target="_blank" rel="noreferrer">DEVELOPMENT.md</Link>.
+            Source docs: <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={QUICKSTART} target="_blank" rel="noreferrer">QUICKSTART.md</Link> and{" "}
+            <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={DEV} target="_blank" rel="noreferrer">DEVELOPMENT.md</Link>.
           </p>
         </Card>
 
         <Card title="LLM provider setup">
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <span className="font-medium text-white">Gemini</span>: set <code>GEMINI_API_KEY</code>
+              <span className="font-medium text-[rgb(var(--mm-fg))]">Gemini</span>: set <code>GEMINI_API_KEY</code>
             </li>
             <li>
-              <span className="font-medium text-white">OpenRouter</span>: set <code>OPENROUTER_API_KEY</code>
+              <span className="font-medium text-[rgb(var(--mm-fg))]">OpenRouter</span>: set <code>OPENROUTER_API_KEY</code>
             </li>
             <li>
-              <span className="font-medium text-white">Ollama (local)</span>: run <code>ollama serve</code>, pull a model, optionally set <code>OLLAMA_MODEL</code>
+              <span className="font-medium text-[rgb(var(--mm-fg))]">Ollama (local)</span>: run <code>ollama serve</code>, pull a model, optionally set <code>OLLAMA_MODEL</code>
             </li>
           </ul>
         </Card>
@@ -77,7 +77,7 @@ npm start`}</Code>
             Supported sources: Apple Notes (macOS), Obsidian, Notion, local files.
           </p>
           <div className="mt-3">
-            <Link className="underline hover:text-white" href={INTEGRATIONS} target="_blank" rel="noreferrer">
+            <Link className="underline hover:text-[rgb(var(--mm-fg))]" href={INTEGRATIONS} target="_blank" rel="noreferrer">
               Setup guide (INTEGRATIONS.md)
             </Link>
           </div>
